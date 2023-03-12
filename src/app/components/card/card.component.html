@@ -1,0 +1,28 @@
+<div class="card_container">
+  <div class="card_container_link_wrap">
+    <img src="../../../assets/arrow-left.svg" alt="arrow" /><a
+      routerLink="/dashboard"
+      >Вернуться</a
+    >
+  </div>
+  <div>
+    <h1 class="person_name">{{ person?.name }}</h1>
+    <div class="person_info_container">
+      <div class="person_info">
+        Gender <span>{{ person?.gender }}</span>
+      </div>
+      <div class="person_info skin">
+        Skin Color <span>{{ person?.skinColor }}</span>
+      </div>
+    </div>
+
+    <div class="person_info_container">
+      <div class="person_info">
+        Mass <span>{{ person?.mass }}</span>
+      </div>
+      <div class="person_info skin">
+        Height <span>{{ person?.height }}</span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,69 @@
+<div class="dashboard_wrap">
+  <div class="dashboard_list_wrap">
+    <h1 class="dashboard_title">Peoples from StarWars</h1>
+    <div
+      *ngFor="let person of getPeoples.persons | filterPersons : searchText"
+      class="card"
+    >
+      <div class="card_title_wrap">
+        <a class="card_title" routerLink="/card/{{ person.id }}"
+          >{{ person.name }} <img src="../assets/icon.svg" alt="arrow"
+        /></a>
+      </div>
+      <div class="description">
+        <div class="description_type_text">Male</div>
+        <div class="description_value_text">{{ person.gender }}</div>
+        <div class="description_type_text">Skin Color</div>
+        <div class="description_value_text">{{ person.skinColor }}</div>
+      </div>
+    </div>
+    <div class="paginate">
+      <div class="arrow" (click)="page !== 0 && lastPage()">&lt;</div>
+      <span class="paginate_count">
+        {{ page === 0 ? 1 : page + 1 }}
+      </span>
+      <div class="arrow" (click)="nextPage()">></div>
+    </div>
+  </div>
+
+  <div class="filters_wrap">
+    <h2 class="filters_title">Фильтры</h2>
+    <input
+      class="filters_input"
+      type="text"
+      [(ngModel)]="searchText"
+      placeholder="Название"
+    />
+
+    <div class="filters_skills_wrap">
+      Skin Color
+      <p>Выбраны {{ skinColorValue.length }}</p>
+      <ul class="filters_skills">
+        <li (click)="handleClickSkin('light', 1)">
+          <img [src]="getIsSkinColor('light')" />light
+        </li>
+        <li (click)="handleClickSkin('fair', 2)">
+          <img [src]="getIsSkinColor('fair')" />fair
+        </li>
+        <li (click)="handleClickSkin('blue', 3)">
+          <img [src]="getIsSkinColor('blue')" />blue
+        </li>
+      </ul>
+    </div>
+
+    <div class="filters_gender">
+      Gender
+      <ul>
+        <li (click)="handleClickGender('male')">
+          <img [src]="getIsGender('male')" class="filters_gender_img" />male
+        </li>
+        <li (click)="handleClickGender('female')">
+          <img [src]="getIsGender('female')" class="filters_gender_img" />female
+        </li>
+        <li (click)="handleClickGender('n/a')">
+          <img [src]="getIsGender('n/a')" class="filters_gender_img" />n/a
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

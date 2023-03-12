@@ -1,0 +1,58 @@
+.card_container {
+  margin-top: 50px;
+  margin-left: 64px;
+  &_link_wrap {
+    display: flex;
+    align-items: center;
+    & a {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 16px;
+      color: #2962ff;
+      text-decoration: none;
+      margin-top: 2px;
+    }
+  }
+
+  &_link_wrap img {
+    margin-right: 5px;
+  }
+}
+.person {
+  &_name {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 33px;
+    color: rgba(0, 0, 0, 0.87);
+  }
+  &_info {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 0.87);
+    margin-bottom: 40px;
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    &_container {
+      display: flex;
+    }
+    & span {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: #2962ff;
+    }
+  }
+}
+.skin {
+  margin-left: 279px;
+}
